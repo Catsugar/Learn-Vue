@@ -1,0 +1,24 @@
+@charset "utf-8";
+/********初始化************/
+*{padding:0;margin:0;}
+body{
+	background-color:#eee;
+	font:18px/25px "微软雅黑";
+	color:#333;
+	text-align:center;}
+.container{
+	margin:0 auto;
+	width:100%;}
+.container h2{
+	line-height:50px;}
+.box{
+	width:80%;
+	margin:40px auto;
+	display:block;}
+.box li{
+	margin:20px;
+	list-style:none;
+	display:inline-block;}
+.container button{
+	padding:5px 10px;
+	font:14px/25px "微软雅黑";}

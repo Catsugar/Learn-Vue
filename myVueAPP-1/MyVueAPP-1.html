@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>搞一个斐波那契数列</title>
+<link type="text/css" rel="stylesheet" href="MyVueAPP-1.css"  />
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="container" id="app">
+  <h2>{{ title }}</h2>
+  <div class="box" id="box">
+    <ul>
+      <!---<li v-for="n in 10"> {{ n }} </li>--->
+    </ul>
+  </div>
+  <button v-on:click="returnData">生成数列</button>
+  <button v-on:click="stopData">停止</button>
+  <button v-on:click="cleanData">清除</button>
+
+</div>
+<script src="MyVueAPP-1.js"></script>
+</body>
+</html>
