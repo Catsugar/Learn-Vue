@@ -2,7 +2,7 @@
 ### 这个仓库算是一个对自己学习状态的记录吧，↖(^ω^)↗
 ###2017.4.24[搞了一个斐波那契数列](https://catsuger.github.io/Learn-Vue/myVueAPP-1/MyVueAPP-1.html)
 ***
-###2017.4.29记录一下脚手架搭建过程。
+### 2017.4.29记录一下脚手架搭建过程。
 
 #### 安装npm,vue
 
@@ -10,7 +10,7 @@
 cnpm install npm -g
 cnpm install vue
 ```
-####安装 vue-cli
+#### 安装 vue-cli
 
 ```
 cnpm install --global vue-cli
