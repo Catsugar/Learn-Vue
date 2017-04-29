@@ -18,18 +18,14 @@ export default {
   data: function () {
     return {
       message: '我的Todo List',
-      todos: [
-      {text: '苹果', isFinished: false},
-      {text: '哈密瓜', isFinished: true},
-      {text: '苹果', isFinished: false},
-      {text: '榴莲', isFinished: true}
-      ]
+      todos: Store.fetch() || [],
+      newTodo: ''
     }
   },
   watch: {
     todos: {
-      handler: function (val, oldval) {
-        console.log(val, oldval)
+      handler: function (todos) {
+        Store.save(todos)
       },
       deep: true
     }
@@ -39,6 +35,7 @@ export default {
       todo.isFinished = !todo.isFinished
     },
     addTodo: function () {
+      alert(this.todos)
       this.todos.push({
         text: this.newTodo,
         isFinished: false
