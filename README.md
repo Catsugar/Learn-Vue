@@ -55,4 +55,5 @@ webpack （文件名） （打包后的文件名）
 
 ```
 npm install style-loader css-loader --save-dev
+webpack （文件名） （打包后的文件名） --module-bind 'css=style-loader!css-loader' --watch
 ```
