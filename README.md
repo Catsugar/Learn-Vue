@@ -51,3 +51,8 @@ npm  install webpack --save-dev
 ```
 webpack （文件名） （打包后的文件名）
 ```
+#### 安装loader
+
+```
+npm install style-loader css-loader --save-dev
+```
