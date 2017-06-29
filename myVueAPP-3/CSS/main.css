@@ -411,75 +411,6 @@ body{
 .Shop_item p{
 	font-size:12px;
 }
-/************************************帮助区******************************************/
-.Help_Bar{
-	width:auto;
-	border-top:1px solid #999;
-	margin-top:60px;
-	height:365px;
-	border-bottom:3px solid #C40000;
-	background-color:#FFF;
-}
-.Help_Box{
-	margin:0 auto;
-}
-.Help_Top{
-	width:100%;
-	border-bottom:1px solid #999;
-	height:150px;
-}
-.Help_Item{
-	height:50px;
-	width:274px;
-	margin-top:50px;
-}
-.Help_Item>div{
-	height:100%;
-	float:left;}
-.Help_Item h3{ 
-    font:16px/25px "微软雅黑 Light";color:#000;
-	font-weight:bold;
-}
-.Help_Item p{
-    font:16px/25px "微软雅黑 Light";color:#999;
-	font-weight:bold;}
-/*******底部******/
-.Help_Bottom{
-	width:100%;
-	padding-top:30px;}
-.Help_Bottom ul li{
-	width:220px;
-	float:left;
-	display:inline-block;}
-.Help_Bottom ul li a{	
-    font:16px/25px "微软雅黑 Light";color:#333;
-	font-weight:bold;}
-.Help_Bottom ul li ul li a{
-    font:12px/20px "微软雅黑 Light";color:#999;}
-/************************************页脚区******************************************/
-.Footer{
-    background-color:#000;
-	}
-.Footer_Box{
-	max-width:1200px;
-	font:12px/20px "微软雅黑 Light";color:#999;
-	margin:0 auto;
-	height:190px;
-	padding-top:5px;}
-.Footer_Box span{
-	margin-right:70px;
-	height:20px;}
-.Footer_Box p{
-    height:20px;}
-.Footer_Box a{
-	margin:10px 4px;
-	height:20px;
-	font:12px/20px "微软雅黑 Light";color:#FFF;}
-.Footer_Box a:hover{
-	color:#FF6;}
-.Footer_Box img{
-	margin-right:10px;
-	margin-top:8px;}
 /************************************产品分类页******************************************/	
 .Products .Products_left{
 	width:180px;}
@@ -843,6 +774,7 @@ background-color:#FFF;}
 	border:#ccc solid 1px;}
 .select_input{
 	height:28px;
+	line-height:28px;
 	border-top:#ccc solid 1px;
 	border-bottom:#ccc solid 1px;
 	width:50px;
@@ -851,7 +783,7 @@ background-color:#FFF;}
 	text-align:center;
 	width:50px;
 	height:28px;
-	line-height:28px\9;}
+	line-height:28px;}
 .kucun{
 	line-height:30px;
 	height:30px;
@@ -1219,7 +1151,7 @@ background-color:#FFF;}
 	padding-left:5px;}	
 .shoppingcar_titleright span{
 	height:100%;
-	line-height:50px;
+	line-height:25px;
 	margin-left:450px;}
 .shoppingcar_titleright span, i{
 	vertical-align:middle;}
@@ -1268,6 +1200,7 @@ background-color:#FFF;}
 	margin-left:10px;}
 .shoppro_des{
 	height:80px;
+	line-height:25px;
 	width:180px;
 	margin-left:15px;}
 .bh:hover{
@@ -1282,7 +1215,6 @@ background-color:#FFF;}
 	height:100px;
 	width:160px;
 	color:#9C9C9C;
-	padding-top:20px;
 	padding-left:20px;}
 .shoppro_size:hover{
 	color:#F00;
@@ -1292,31 +1224,13 @@ background-color:#FFF;}
 	width:136px;}
 .cx{
 	text-align:center;
-	padding-top:5px;
 	height:25px;
+	line-height:25px;
 	width:90px;
 	color:#f00;
 	background-color:#FFF0E7;
 	border:1px dotted #f00;
 	border-radius:3px;}
-.cx img{
-	margin:2px 7px 9px ;}
-.cx_tc{
-	height:40px;
-	width:120px;
-	border:1px solid #9C9C9C;
-	color:#9C9C9C;
-	background-color:#fff;
-	display:none;
-	text-align:center;
-	border-radius:3px;
-	line-height:20px;
-	z-index:100;}
-.cx:hover .cx_tc{
-	display:block;}
-.cx:hover img{
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);}
 .Carnum1{
 	font:16px/25px "微软雅黑";
 	color:#9C9C9C;
@@ -1407,6 +1321,78 @@ background-color:#FFF;}
 	margin-left:10px;}
 .question span a:hover{
 	color:#AF0000;}
-	
+/************************************帮助区******************************************/
+.Help_Bar{
+	width:auto;
+	border-top:1px solid #999;
+	margin-top:60px;
+	height:365px;
+	border-bottom:3px solid #C40000;
+	background-color:#FFF;
+	clear:both;
+}
+.Help_Box{
+	margin:0 auto;
+}
+.Help_Top{
+	width:100%;
+	border-bottom:1px solid #999;
+	height:150px;
+}
+.Help_Item{
+	height:50px;
+	width:274px;
+	margin-top:50px;
+}
+.Help_Item>div{
+	height:100%;
+	float:left;}
+.Help_Item h3{ 
+    font:16px/25px "微软雅黑 Light";color:#000;
+	font-weight:bold;
+}
+.Help_Item p{
+    font:16px/25px "微软雅黑 Light";color:#999;
+	font-weight:bold;}
+/*******底部******/
+.Help_Bottom{
+	width:100%;
+	}
+.Help_Bottom ul li{
+	width:220px;
+	height:20px;
+	float:left;
+	display:inline-block;}
+.Help_Bottom ul li a{	
+    font:16px/20px "微软雅黑 Light";color:#333;
+	font-weight:bold;}
+.Help_Bottom ul li ul li a{
+    font:12px/14px "微软雅黑 Light";color:#999;}
+/************************************页脚区******************************************/
+.Footer{
+    background-color:#000;
+	clear:both;
+	}
+.Footer_Box{
+	max-width:1200px;
+	font:12px/20px "微软雅黑 Light";color:#999;
+	margin:0 auto;
+	height:190px;
+	padding-top:5px;}
+.Footer_Box span{
+	margin-right:70px;
+	height:20px;}
+.Footer_Box p{
+    height:20px;}
+.Footer_Box a{
+	margin:10px 4px;
+	height:20px;
+	font:12px/20px "微软雅黑 Light";color:#FFF;}
+.Footer_Box a:hover{
+	color:#FF6;}
+.Footer_Box img{
+	margin-right:10px;
+	margin-top:8px;}
+
 	
 	
