@@ -1,5 +1,4 @@
-window.onload = function () {
-
+window.onload = function (){ 
 var vm = new Vue({
   el: '#app',
   data: {
@@ -7,8 +6,13 @@ var vm = new Vue({
     totalNum:0,
     shopList:[],
   },
-  filter:{
-  
+  filters: {
+    formatMoney: function(value){
+		return "¥"+value.toFixed(2);
+	},
+	sumMoney: function(value){
+		return value.toFixed(2);
+	}
   },
   mounted: function(){
     this.cartView();

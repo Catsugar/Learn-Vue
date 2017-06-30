@@ -73,7 +73,7 @@
           </li>
         </ul>
       </div>
-      <div class="shoppingcar_titleright fr"> <span>已选商品（不含运费)</span><i class="Carnum">0.00</i>
+      <div class="shoppingcar_titleright fr"> <span>已选商品（不含运费)</span><i class="Carnum">{{totalMoney | sumMoney}}</i>
         <button type="button" onclick="">结算</button>
       </div>
     </div>
@@ -103,17 +103,17 @@
               <span> {{pro.productsize}} </span> </div>
             <div class="shoppro_price fr"> <span class="bh">已入收藏夹</span><br />
               <span class="bh">删除</span> </div>
-            <div class="shoppro_price fr"> <span class="Carnum">{{pro.productprice * pro.productnum}}</span> </div>
+            <div class="shoppro_price fr"> <span class="Carnum">{{pro.productprice * pro.productnum  | sumMoney}}</span> </div>
             <div class="shoppro_price fr">
               <div class="reduction fl">-</div>
               <div class="select_input fl" >
-                <input type="text" value="0" disabled v-model="pro.productnum">
+                <input type="text"  v-model="pro.productnum">
               </div>
               <div class="plus fl">+</div>
             </div>
             <div class="shoppro_price fr">
-              <div class="Carnum1">{{pro.productprice0}}</div>
-              <div class="Carnum2">{{pro.productprice}}</div>
+              <div class="Carnum1">{{pro.productprice0 | formatMoney}}</div>
+              <div class="Carnum2">{{pro.productprice | formatMoney}}</div>
               <div class="cx">卖家促销</div>
             </div>
           </li>
@@ -131,7 +131,7 @@
           <li>分享</li>
         </ul>
       </div>
-      <div class="shoppingcar_accright fr"> <span>已选商品<i class="Carnum3">{{totalNum}}</i>件</span> <span>合计（不含运费）：<i class="Carnum4">{{totalMoney}}</i></span>
+      <div class="shoppingcar_accright fr"> <span>已选商品<i class="Carnum3">{{totalNum}}</i>件</span> <span>合计（不含运费）：<i class="Carnum4">{{totalMoney | sumMoney}}</i></span>
         <button type="button" onclick="">结算</button>
       </div>
     </div>

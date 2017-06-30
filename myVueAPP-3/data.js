@@ -12,6 +12,7 @@ var data={
             "productpic": "icon/sp1.jpg",
             "productcolor": "颜色分类：格子",
             "productsize": "尺码：M",
+			"productnum":0,
             "productprice0": 259,
             "productprice": 149
           },
@@ -20,6 +21,7 @@ var data={
             "productpic": "icon/sp2.jpg",
             "productcolor": "颜色分类：黑色",
             "productsize": "尺码：均码",
+			"productnum":0,
             "productprice0": 153,
             "productprice": 89
           }
@@ -33,6 +35,7 @@ var data={
             "productpic": "icon/sp5.jpg",
             "productcolor": "颜色分类：蓝色",
             "productsize": "尺码：M",
+			"productnum":0,
             "productprice0": 199,
             "productprice": 130
           },
@@ -41,6 +44,7 @@ var data={
             "productpic": "icon/sp6.jpg",
             "productcolor": "颜色分类：粉色",
             "productsize": "尺码：均码",
+			"productnum":0,
             "productprice0": 259,
             "productprice": 149
           },
@@ -49,6 +53,7 @@ var data={
             "productpic": "icon/sp7.jpg",
             "productcolor": "颜色分类：白色",
             "productsize": "尺码：均码",
+			"productnum":0,
             "productprice0": 353,
             "productprice": 279
           }
@@ -62,6 +67,7 @@ var data={
             "productpic": "icon/sp4.jpg",
             "productcolor": "颜色分类：粉灰",
             "productsize": "尺码：M",
+			"productnum":0,
             "productprice0": 459,
             "productprice": 229
           }
