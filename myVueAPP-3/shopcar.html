@@ -78,7 +78,7 @@
       </div>
     </div>
     <div class="shoppingcar_sum"><span style="margin-left:20px">
-      <input type="checkbox" name="allcheck" value="allcheck"/>
+      <input type="checkbox" name="allcheck" value="allcheck" v-bind:class="{'check':checkAllFlag}" v-on:click="checkAll()"/>
       全选</span> <span>商品信息</span>
       <ul class="fr">
         <li>单价</li>
@@ -91,12 +91,12 @@
     <ul class="shop_list">
       <li class="shop_box comWidth" v-for="shop in shopList">
         <div class="sj shop_name" >
-          <input type="checkbox" name="allcheck" value="allcheck"/>
+          <input type="checkbox" name="allcheck" value="allcheck" v-bind:class="{'check':shop.checked}" v-on:click="selectPro(shop)" />
           <img src="icon/shop1.png" alt="" /> <i>{{shop.shopname}}</i>  </div>
         <ul class="product_list">
           <!-----------商品------------>
           <li class="shop_product" v-for="pro in shop.product">
-            <input type="checkbox" name="allcheck" value="allcheck" class="fl"/>
+            <input type="checkbox" name="allcheck" value="allcheck" class="fl" v-bind:class="{'check':pro.checked}" v-on:click="selectPro(pro)"/>
             <img :src="pro.productpic" alt="" class="fl"/>
             <div class="shoppro_des bh fl"> {{pro.productname}} </div>
             <div class="shoppro_size fl"> <span> {{pro.productcolor}} </span> <br />
@@ -105,11 +105,11 @@
               <span class="bh">删除</span> </div>
             <div class="shoppro_price fr"> <span class="Carnum">{{pro.productprice * pro.productnum  | sumMoney}}</span> </div>
             <div class="shoppro_price fr">
-              <div class="reduction fl">-</div>
+              <div class="reduction fl" v-on:click="changeNum(pro,-1)">-</div>
               <div class="select_input fl" >
                 <input type="text"  v-model="pro.productnum">
               </div>
-              <div class="plus fl">+</div>
+              <div class="plus fl" v-on:click="changeNum(pro,1)">+</div>
             </div>
             <div class="shoppro_price fr">
               <div class="Carnum1">{{pro.productprice0 | formatMoney}}</div>
@@ -122,9 +122,9 @@
     </ul>
     <div class="shoppingcar_acc">
       <div class="shoppingcar_accleft sj fl">
-        <input type="checkbox" name="allcheck" value="allcheck" class="fl"/>
+        <input type="checkbox" name="allcheck" value="allcheck" class="fl" v-on:click="checkAllFlag=flase"/>
         <ul class="fl">
-          <li>全选</li>
+          <li>取消全选</li>
           <li>删除</li>
           <li>清除失效宝贝</li>
           <li>移入收藏夹</li>
