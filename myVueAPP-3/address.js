@@ -55,7 +55,6 @@ var vm = new Vue({
 		     })	
 		})
 		this.delFlag=false;
-		this.calcTotalPrice();
 	},
 	selectPro: function(pro){
 	    if(typeof pro.checked=='undefined'){
