@@ -45,9 +45,15 @@ var vm = new Vue({
 		this.delFlag=true;
 		this.curPro=pro;
 	},
-	surePro: function(pro){
-        var index=this.shopList.product.index(this.curPro);
-		this.shopList.product.splice(index,1);
+	surePro: function(){
+		var _this=this;
+	    this.shopList.forEach(function(shop,index){
+			 shop.product.forEach(function(pro,index){
+		         console.log(shop.product);
+				 var i=shop.product.indexOf(_this.curPro)
+				 if(i!==-1){shop.product.splice(i,1);}
+		     })	
+		})
 		this.delFlag=false;
 	},
 	selectPro: function(pro){
