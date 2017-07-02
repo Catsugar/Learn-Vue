@@ -6,6 +6,7 @@ var data={
     "list": [
       {
         "shopname": "店铺：润乙一服饰旗舰店",
+		"shopflag": false,
         "product": [
           {
             "productname": "润乙一2016冬装新款格子呢料半身裙女时尚中裙韩版百搭A字裙D400",
@@ -29,6 +30,7 @@ var data={
       },
       {
         "shopname": "店铺：店铺：mimius眼袋自制",
+		"shopflag": false,
         "product": [
           {
             "productname": "mimius2016夏季新款水墨画连衣裙性感显瘦无袖宽松露肩女M6078",
@@ -61,6 +63,7 @@ var data={
       },
       {
         "shopname": "店铺：jimmyxiaolu",
+		"shopflag": false,
         "product": [
           {
             "productname": "天天特价 大毛领毛呢外套女中长款韩国加厚呢大衣茧型呢子大衣",

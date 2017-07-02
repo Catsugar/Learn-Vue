@@ -40,37 +40,36 @@ var vm = new Vue({
 	},
 	selectPro: function(product){
 	    if(typeof product.checked=='undefined'){
-		  //Vue.set(product,"checked",true);//全局注册
-		  this.$set(product,"checked",true);//局部注册
+		  Vue.set(product,"checked",true);//全局注册
+		  //this.$set(product,"checked",true);//局部注册
 		}else{
 		   product.checked=!product.checked;	
 		}
 	},
     selectShop: function(shop){
-	    if(typeof shop.checked=='undefined'){
-		  this.$set(shop,"checked",true);//局部注册
-		  var _this=this;
-		  this.product.forEach(function(pro,index){
-		    if(typeof pro.checked=='undefined'){
-		      _this.$set(pro,"checked",_this.checked);//局部注册
-		    }else{
-		      pro.checked=_this.checked;	
-		    }
-		  })
-		}else{
-		   shop.checked=!shop.checked;	
-		}
+		shop.shopflag=!shop.shopflag;
+	    shop.product.forEach(function(pro,index){
+		  if(typeof pro.checked=='undefined'){
+		     Vue.set(pro,"checked",shop.shopflag);
+		  }else{
+		     pro.checked=shop.shopflag;	
+		  }
+		})
 	},
 	checkAll: function(){
 		this.checkAllFlag=!this.checkAllFlag;
 		var _this=this;
 	    this.shopList.forEach(function(shop,index){
-		  if(typeof shop.checked=='undefined'){
-		     _this.$set(shop,"checked",_this.checkAllFlag);//局部注册
-		  }else{
-		     shop.checked=_this.checkAllFlag;	
-		  }
+		     shop.shopflag=_this.checkAllFlag;
+			 shop.product.forEach(function(pro,index){
+		       if(typeof pro.checked=='undefined'){
+		         Vue.set(pro,"checked",shop.shopflag);
+		       }else{
+		         pro.checked=shop.shopflag;	
+		       }
+		     })	
 		})
+		
 	}
   }
 });

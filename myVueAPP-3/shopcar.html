@@ -91,7 +91,7 @@
     <ul class="shop_list">
       <li class="shop_box comWidth" v-for="shop in shopList">
         <div class="sj shop_name" >
-          <span class="selectbox" v-bind:class="{'select':shop.checked}" v-on:click="selectShop(shop)" ></span>
+          <span class="selectbox" v-bind:class="{'select':shop.shopflag}" v-on:click="selectShop(shop)" ></span>
           <img src="icon/shop1.png" alt="" /> <i>{{shop.shopname}}</i>  </div>
         <ul class="product_list">
           <!-----------商品------------>
