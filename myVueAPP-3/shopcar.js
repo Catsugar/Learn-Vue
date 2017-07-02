@@ -5,6 +5,8 @@ var vm = new Vue({
     totalMoney:0,
     totalNum:0,
 	checkAllFlag:false,
+	delFlag:false,
+	curPro:'',
     shopList:[],
   },
   filters: {
@@ -37,39 +39,87 @@ var vm = new Vue({
 		}else if(way<0 && product.productnum!==1){
 		   product.productnum--;	
 		}	
+		this.calcTotalPrice();
 	},
-	selectPro: function(product){
-	    if(typeof product.checked=='undefined'){
-		  Vue.set(product,"checked",true);//全局注册
-		  //this.$set(product,"checked",true);//局部注册
+	deletePro: function(pro){
+		this.delFlag=true;
+		this.curPro=pro;
+	},
+	surePro: function(pro){
+        var index=this.shopList.product.index(this.curPro);
+		this.shopList.product.splice(index,1);
+		this.delFlag=false;
+	},
+	selectPro: function(pro){
+	    if(typeof pro.checked=='undefined'){
+		  Vue.set(pro,"checked",true);//全局注册
+		  //this.$set(pro,"checked",true);//局部注册
 		}else{
-		   product.checked=!product.checked;	
+		   pro.checked=!pro.checked;	
 		}
+		this.calcTotalPrice();		
 	},
     selectShop: function(shop){
-		shop.shopflag=!shop.shopflag;
+		shop.checked=!shop.checked;
 	    shop.product.forEach(function(pro,index){
 		  if(typeof pro.checked=='undefined'){
-		     Vue.set(pro,"checked",shop.shopflag);
+		     Vue.set(pro,"checked",shop.checked);
 		  }else{
-		     pro.checked=shop.shopflag;	
+		     pro.checked=shop.checked;	
 		  }
 		})
+		this.calcTotalPrice();		
 	},
 	checkAll: function(){
 		this.checkAllFlag=!this.checkAllFlag;
 		var _this=this;
 	    this.shopList.forEach(function(shop,index){
-		     shop.shopflag=_this.checkAllFlag;
+			 if(typeof shop.checked=='undefined'){
+		       Vue.set(shop,"checked",_this.checkAllFlag);
+		     }else{
+		       shop.checked=_this.checkAllFlag;
+			 }
 			 shop.product.forEach(function(pro,index){
 		       if(typeof pro.checked=='undefined'){
-		         Vue.set(pro,"checked",shop.shopflag);
+		         Vue.set(pro,"checked",shop.checked);
 		       }else{
-		         pro.checked=shop.shopflag;	
+		         pro.checked=shop.checked;	
 		       }
 		     })	
 		})
-		
+		this.calcTotalPrice();		
+	},
+	cancelAll: function(){
+		this.checkAllFlag=false;
+		var _this=this;
+	    this.shopList.forEach(function(shop,index){
+			 if(typeof shop.checked=='undefined'){
+		       Vue.set(shop,"checked",false);
+		     }else{
+		       shop.checked=false;
+			 }
+			 shop.product.forEach(function(pro,index){
+		       if(typeof pro.checked=='undefined'){
+		         Vue.set(pro,"checked",false);
+		       }else{
+		         pro.checked=false;	
+		       }
+		     })	
+		})
+		this.calcTotalPrice();		
+	},
+	calcTotalPrice:function(){
+	   var _this=this;
+	   _this.totalMoney=0;
+	   _this.totalNum=0;
+	   this.shopList.forEach(function(shop,index){
+		 shop.product.forEach(function(pro,index){
+		    if(pro.checked){
+		      _this.totalMoney += pro.productprice * pro.productnum;
+			  _this.totalNum += pro.productnum;
+		    }
+		 })	
+	   })		
 	}
   }
 });

@@ -1393,6 +1393,7 @@ background-color:#FFF;}
 .Footer_Box img{
 	margin-right:10px;
 	margin-top:8px;}
+/***************选框*******************/
 .selectbox{
 	padding-left:20px;
 	width:16px;
@@ -1401,4 +1402,64 @@ background-color:#FFF;}
 	background:url(../icon/0.png) left center no-repeat;
 }
 .select{background:url(../icon/1.png) left center no-repeat;}
-	
+
+/**********************选框************************************/
+.dialog{	
+	border:1px solid #999;
+	background-color:#FFF;
+	width:400px;
+	height:200px;
+	box-shadow:rgba(0,0,0,0.3) 5px 5px 3px;
+	border-radius:3px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:-100px 0 0 -200px;
+	display:none;}
+.dialog span{
+	width:20px;
+	height:20px;
+	position:absolute;
+	display:block;
+	top:10px;
+	right:10px;
+	background:url(../icon/close.png) center center no-repeat;
+	background-size:contain;
+	}
+.dialog span:hover {
+	-webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transition: all 1s 0s;
+}
+.dialog div{
+	width:280px;
+	height:40px;
+	margin:0 auto;}
+.dialog input{
+	width:120px;
+	height:40px;
+	border:1px #CC0000 solid;
+	font: 16px/40px "微软雅黑";
+	float:left;}
+#cancel{
+	color:#FFF;
+	background-color:#C00;
+	margin-right:40px;}
+.dialog h1{
+	height:100px;
+	width:100%;
+	text-align:center;
+	font: 18px/100px "微软雅黑";
+	color:#333;}
+/********************覆盖层*********************************************/
+.cover{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:rgba(0, 0,0, 0.5);
+	}	
+.dialog-show{
+	display:block;}

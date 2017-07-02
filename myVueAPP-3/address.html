@@ -57,84 +57,13 @@
       </div>
     </div>
   </div>
-  <!----购物车列表区-------------------------------------------->
-  <div class="Shopping_Car comWidth" >
-    <div class="shoppingcar_title">
-      <div class="shoppingcar_titleleft fl">
-        <ul>
-          <li>
-            <div>全部商品<i class="Carnum">15</i></div>
-          </li>
-          <li>
-            <div>降价商品<i class="Carnum">1</i></div>
-          </li>
-          <li>
-            <div>库存紧张<i class="Carnum">0</i></div>
-          </li>
-        </ul>
-      </div>
-      <div class="shoppingcar_titleright fr"> <span>已选商品（不含运费)</span><i class="Carnum">{{totalMoney | sumMoney}}</i>
-        <button style="display:inline-block" type="button" onclick="">结算</button>
-      </div>
-    </div>
-    <div class="shoppingcar_sum">
-      <span style="margin-left:20px" class="selectbox" v-bind:class="{'select':checkAllFlag}" v-on:click="checkAll()">全选</span>
-      <span>商品信息</span>
-      <ul class="fr">
-        <li>单价</li>
-        <li>数量</li>
-        <li>金额</li>
-        <li>操作</li>
-      </ul>
-    </div>
-    <!------------------------------------------------------------------------------------------------>
-    <ul class="shop_list">
-      <li class="shop_box comWidth" v-for="shop in shopList">
-        <div class="sj shop_name" >
-          <span class="selectbox" v-bind:class="{'select':shop.checked}" v-on:click="selectShop(shop)" ></span>
-          <img src="icon/shop1.png" alt="" /> <i>{{shop.shopname}}</i>  </div>
-        <ul class="product_list">
-          <!-----------商品------------>
-          <li class="shop_product" v-for="pro in shop.product">
-            <span class="selectbox fl" v-bind:class="{'select':pro.checked}" v-on:click="selectPro(pro)"></span>
-            <img :src="pro.productpic" alt="" class="fl"/>
-            <div class="shoppro_des bh fl"> {{pro.productname}} </div>
-            <div class="shoppro_size fl"> <span> {{pro.productcolor}} </span> <br />
-              <span> {{pro.productsize}} </span> </div>
-            <div class="shoppro_price fr"> <span class="bh">已入收藏夹</span><br />
-              <span class="bh" v-on:click="deletePro(pro)">删除</span> </div>
-            <div class="shoppro_price fr"> <span class="Carnum">{{pro.productprice * pro.productnum  | sumMoney}}</span> </div>
-            <div class="shoppro_price fr">
-              <div class="reduction fl" v-on:click="changeNum(pro,-1)">-</div>
-              <div class="select_input fl" >
-                <input type="text"  v-model="pro.productnum">
-              </div>
-              <div class="plus fl" v-on:click="changeNum(pro,1)">+</div>
-            </div>
-            <div class="shoppro_price fr">
-              <div class="Carnum1">{{pro.productprice0 | formatMoney}}</div>
-              <div class="Carnum2">{{pro.productprice | formatMoney}}</div>
-              <div class="cx">卖家促销</div>
-            </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <div class="shoppingcar_acc">
-      <div class="shoppingcar_accleft sj fl">
-        <ul class="fl" >
-          <li  style="width:60px" class="selectbox fl" v-bind:class="{'select':checkAllFlag}" v-on:click="checkAll()">全选</li>
-          <li v-on:click="cancelAll()">取消全选</li>
-          <li>清除失效宝贝</li>
-          <li>移入收藏夹</li>
-          <li>分享</li>
-        </ul>
-      </div>
-      <div class="shoppingcar_accright fr"> <span>已选商品<i class="Carnum3">{{totalNum}}</i>件</span> <span>合计（不含运费）：<i class="Carnum4">{{totalMoney | sumMoney}}</i></span>
-        <button><a href="address.html" style="font:16px '微软雅黑'">结算</a></button>
-      </div>
-    </div>
-  </div>
+  <!----nav区-------------------------------------------->
+
+
+
+
+
+
   <!----帮助区-------------------------------------------->
   <div class="Help_Bar" >
     <div class="Help_Box comWidth">

@@ -2,7 +2,10 @@
 ### 这个仓库算是一个对自己学习状态的记录吧，↖(^ω^)↗
 * 2017.4.24[搞了一个斐波那契数列](https://catsugar.github.io/Learn-Vue/myVueAPP-1/MyVueAPP-1.html)
 * 2017.4.29  todo list
-* Vue建购物结算的例子（模板用的之前仿的天猫购物车静态页面，当时我为什么写的这么。。。[○･｀Д´･ ○]）
+* Vue建购物结算的例子
+[购物车页面](https://catsugar.github.io/Learn-Vue/myVueAPP-3/shopcar.html)
+[地址页面](https://catsugar.github.io/Learn-Vue/myVueAPP-3/address.html)
+（模板用的之前仿的天猫购物车静态页面，当时我为什么写的这么。。。[○･｀Д´･ ○]）
 ***
 ## 记录一下Vue安装搭建过程。
 
