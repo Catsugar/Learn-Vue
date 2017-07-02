@@ -1393,6 +1393,12 @@ background-color:#FFF;}
 .Footer_Box img{
 	margin-right:10px;
 	margin-top:8px;}
-
-	
+.selectbox{
+	padding-left:20px;
+	width:16px;
+	height:16px;
+	display:inline-block;
+	background:url(../icon/0.png) left center no-repeat;
+}
+.select{background:url(../icon/1.png) left center no-repeat;}
 	
