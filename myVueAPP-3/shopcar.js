@@ -8,6 +8,11 @@ var vm = new Vue({
 	delFlag:false,
 	curPro:'',
     shopList:[],
+	addressList:[],
+	limitNum:3,
+	isMoreadd:false,
+	curAdd:0,
+	curTrans:1
   },
   filters: {
     formatMoney: function(value){
@@ -18,20 +23,28 @@ var vm = new Vue({
 	}
   },
   mounted: function(){
-    this.cartView();
+	  this.$nextTick(function(){
+        this.cartView();
+	  });
+  },
+  computed: {
+    filterAddress:function(){
+	  return this.addressList.slice(0,this.limitNum);
+	}
   },
   methods: {
     cartView: function () {
-      var _this=this;
-	  /*this.$http.jsonp('data.json',{"id":1},{headers:{'Access-Control-Allow-Origin':'*'},emulateJSON: true}).then(function(res){
+      /*var _this=this;
+	  this.$http.jsonp('data.json',{"id":1},{headers:{'Access-Control-Allow-Origin':'*'},emulateJSON: true}).then(function(res){
 		alert(res.data);
         _this.shopList=res.body.result.list;
         _this.totalMoney=res.body.result.totalMoney; 
         _this.totalNum=res.body.result.totalNum;
       });*/
-	   _this.shopList=data.result.list;
-       _this.totalMoney=data.result.totalMoney; 
-       _this.totalNum=data.result.totalNum;
+	  this.shopList=data.result.list;
+      this.totalMoney=data.result.totalMoney; 
+      this.totalNum=data.result.totalNum;
+	  this.addressList=addressdata.result;
     },
 	changeNum: function(product,way){
 		if (way>0 ){
@@ -127,7 +140,42 @@ var vm = new Vue({
 		    }
 		 })	
 	   })		
-	}
+	},
+	//地址的方法
+	moreAddress:function(){
+		this.limitNum=this.addressList.length;
+		this.isMoreadd=true;
+	},
+	lessAddress:function(){
+		this.limitNum=3;
+		this.isMoreadd=false;
+	},
+	setDefault:function(id){
+		var i=0;
+		var _this=this;
+	    this.addressList.forEach(function(address,index){
+			address.isDefault=false;
+		});
+		this.addressList.forEach(function(address,index){
+			if(address.addressID==id){
+				address.isDefault=true;
+				i=_this.addressList.indexOf(address);
+			}
+		});
+	    var firstAdd=this.addressList[i];
+		this.addressList.splice(i,1);
+		this.addressList.unshift(firstAdd);
+	},
+	//删除地址
+	deleteAdd: function(add){
+		this.delFlag=true;
+		this.curPro=add;
+	},
+	sureAdd: function(){
+		var i=this.addressList.indexOf(this.curPro);
+		if(i!==-1){this.addressList.splice(i,1);}
+		this.delFlag=false;
+	},
   }
 });
 }

@@ -83,6 +83,7 @@ body{
 	line-height:35px;
 	border-bottom:1px solid #E5E5E5;
 	font-weight:bold;
+	background-color:#F2F2F2;
 }
 .topBar a:hover{
 	color:#C00;
@@ -1176,16 +1177,17 @@ background-color:#FFF;}
 	vertical-align:middle;}
 /****点名*****/
 .shop_box{
-	margin-top:20px;}
+	padding-top:20px;}
 .shop_name{
 	width:1100px;
-	height:25px;}
+	height:25px;
+	line-height:25px}
 .shop_name i{
 	font-style:normal;
 	padding:0 5px;}
 .shop_name img{
 	padding-left:4px;}
-.shop_name input,i,img{
+.shop_name span,i,img{
 	vertical-align:middle;}
 /****商品内容*****/
 .shop_product{
@@ -1267,53 +1269,6 @@ background-color:#FFF;}
 	font-style:normal;
 	color:#C00;
 	padding:0 5px;}	
-/*****登录页面**********************************************************************************/
-.toplogal{
-	background-color:#FFF;
-	height:30px;
-	padding:30px 0;
-	font-family:"微软雅黑";}
-.loginArea{
-	background-color:#E8E8E8;
-	margin-bottom:-60px;}
-.loginArea .comWidth{
-	background:url(../icon/TB.jpg) center center no-repeat;
-	height:600px;
-	position:relative;}
-.login_box{
-	height:400px;
-	width:350px;
-	background-color:#FFF;
-	top:80px;
-	right:65px;
-	position:absolute;}
-.login{
-	width:290px;
-	margin:45px 30px 0 30px;}
-.login span{
-	font:bold 18px/1 "微软雅黑 Light";}
-.login input{
-	width:245px;
-	float:left;
-	margin-top:20px;
-	height:42px;
-	border:1px solid #CBCBCB;
-	font:bold 18px/42px "微软雅黑 Light";
-	color:#CBCBCB;}
-.login_name{
-	background:url(../icon/login1.png) left center no-repeat;
-	padding-left:45px;}
-.login_password{
-    background:url(../icon/login2.png) left center no-repeat;
-	padding-left:45px;}
-.login button{
-	width:100%;
-	float:left;
-	margin-top:20px;
-	height:45px;
-	background-color:#AF0000;
-	font:bold 18px/45px "微软雅黑 Light";
-	color:#fff;}
 .question{
 	margin-top:20px;}
 .question span{
@@ -1325,7 +1280,6 @@ background-color:#FFF;}
 .Help_Bar{
 	width:auto;
 	border-top:1px solid #999;
-	margin-top:60px;
 	height:365px;
 	border-bottom:3px solid #C40000;
 	background-color:#FFF;
@@ -1463,3 +1417,84 @@ background-color:#FFF;}
 	}	
 .dialog-show{
 	display:block;}
+/**********************地址页******************************************/
+.address-paper{
+	background-color:#FFF;
+	width:100%;
+	padding-bottom:200px;}
+.address-head{
+	background:url(../images/lazy.png) center center no-repeat;
+	height:100px;}
+.address-paper h3{
+	display:block;
+	clear:both;
+	height:50px;
+	line-height:50px;}
+.address-paper h3 a{
+	color:#F90;}
+.Curaddress{opacity:1 !important;}
+.address-ul li{
+	width:248px;
+	height:120px;
+	border:1px outset #999;
+	float:left;
+	opacity:0.5;
+	margin-right:25px;
+	margin-bottom:20px;}
+.address-ul li>div{
+	width:100%;
+	height:100%;
+	box-sizing:border-box;
+	border:4px dashed #CC0000;
+	position:relative;}
+.address-ul li span{
+	display:block;
+	font: 12px "微软雅黑";
+	padding:7px 10px 0 10px;}
+.address-ul hr{
+	width:100%;
+	height:0;
+	border-bottom:1px dashed #CCCCCC;
+	border-top:none;}
+.address-ul li p a{
+	font: bold 12px "微软雅黑";
+	color:#F90;
+	padding:5px 10px 0 10px;
+	opacity:0;
+	display:block;}
+.address-ul li div> i{
+	width:26px;
+	height:26px;
+	display:block;
+	position:absolute;
+	right:10px;
+	opacity:0;}
+.deladdress{
+	background:url(../icon/del.png) center center no-repeat;
+	background-size:contain;
+	top:3px;}
+.editaddress{
+	background:url(../icon/edit.png) center center no-repeat;
+	background-size:contain;
+	top:70px;}
+.address-ul li:hover,
+.address-ul li:hover p a,
+.Curaddress p a,
+.address-ul li:hover i{
+	opacity:1!important;}
+.new-address a{
+	color:#F90;
+	display:block;
+	text-align:center;
+	font: bold 52px "微软雅黑";
+	line-height:110px;}	
+.address-trans ul{
+	width:825px;
+	margin:0 auto;}
+.address-trans ul div{
+	text-align:center;
+	font: bold 14px "微软雅黑";
+	line-height:110px;}
+	
+	
+	

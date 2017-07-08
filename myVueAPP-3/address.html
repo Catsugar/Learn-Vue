@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>地址</title>
 <link type="text/css" href="CSS/main.css" rel="stylesheet"/>
 <link type="text/css" href="CSS/reset.css" rel="stylesheet"/>
 <link type="text/css" href="CSS/toTop.css" rel="stylesheet"/>
@@ -11,10 +11,11 @@
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.min.js"></script>
 <script src="shopcar.js"></script>
+<script src="addressdata.js"></script>
 <script src="data.js"></script>
 </head>
 <body>
-<div id="app"> 
+<div id="app" style="background-color:#FFF"> 
   <!----回到顶部--------------------------------------------> 
   <a href="javascript:;" id="toTop" title="回到顶部"></a>
   <div class="topBar">
@@ -57,11 +58,85 @@
       </div>
     </div>
   </div>
-  <!----nav区-------------------------------------------->
-
-
-
-
+  <!----地址-------------------------------------------->
+  <div class="address-paper">
+    <div class="address-head comWidth"></div>
+    <h3>选择收货地址</h3>
+    <div class="address-info comWidth">
+      <ul class="address-ul" >
+       <ul v-for="(address,index) in filterAddress">
+        <li v-bind:class="{'Curaddress':index==curAdd}" v-on:click="curAdd=index">
+          <div>
+           <span>{{address.userName}}</span>
+           <hr>
+           <span>{{address.streetName}}</span>
+           <span>{{address.tel}}</span>
+           <p>
+            <a href="javascript:;" v-if="address.isDefault">默认地址</a>
+            <a href="javascript:;" v-if="!address.isDefault" v-on:click="setDefault(address.addressID)">设为默认</a>
+           </p>
+           <i class="deladdress" v-on:click="deleteAdd(address)"></i>
+           <i class="editaddress"></i>
+         </div>
+        </li>
+       </ul>
+        <li class="new-address"><div><a href="">+</a></div></li>
+      </ul>
+      <h3>
+        <a href="javascript:;" v-on:click="moreAddress()" v-if="!isMoreadd">+显示全部收货地址</a>
+        <a href="javascript:;" v-on:click="lessAddress()" v-if="isMoreadd">+收起展开的地址</a>
+      </h3>
+    </div>
+    <h3>选择配送方式</h3>
+    <div class="address-trans comWidth">
+      <ul class="address-ul">
+        <li v-bind:class="{'Curaddress':curTrans==1}" v-on:click="curTrans=1"><div>用煤气管道运输<i class="deladdress"></i><i class="editaddress"></i></div></li>
+        <li v-bind:class="{'Curaddress':curTrans==2}" v-on:click="curTrans=2"><div>用十万伏特转送<i class="deladdress"></i><i class="editaddress"></i></div></li>
+        <li v-bind:class="{'Curaddress':curTrans==3}" v-on:click="curTrans=3"><div>用航空母舰中转<i class="deladdress"></i><i class="editaddress"></i></div></li>
+      </ul>
+    </div>
+  </div>
+    <!------------------------------------------------------------------------------------------------>
+  <div >
+    <h3>确定商品信息</h3>
+    <ul class="shop_list comWidth" style="background-color:#FFF; height:auto">
+      <li class="shop_box comWidth" v-for="shop in shopList" >
+        <div class="sj shop_name" >
+          <span class="selectbox" v-bind:class="{'select':shop.checked}" v-on:click="selectShop(shop)" ></span>
+          <img src="icon/shop1.png" alt="" /> <i>{{shop.shopname}}</i>  </div>
+        <ul class="product_list">
+          <!-----------商品------------>
+          <li class="shop_product" v-for="pro in shop.product">
+            <span class="selectbox fl" v-bind:class="{'select':pro.checked}" v-on:click="selectPro(pro)"></span>
+            <img :src="pro.productpic" alt="" class="fl"/>
+            <div class="shoppro_des bh fl"> {{pro.productname}} </div>
+            <div class="shoppro_size fl"> <span> {{pro.productcolor}} </span> <br />
+              <span> {{pro.productsize}} </span> </div>
+            <div class="shoppro_price fr"> <span class="bh">已入收藏夹</span><br />
+              <span class="bh" v-on:click="deletePro(pro)">删除</span> </div>
+            <div class="shoppro_price fr"> <span class="Carnum">{{pro.productprice * pro.productnum  | sumMoney}}</span> </div>
+            <div class="shoppro_price fr">
+              <div class="reduction fl" v-on:click="changeNum(pro,-1)">-</div>
+              <div class="select_input fl" >
+                <input type="text"  v-model="pro.productnum" v-on:change="calcTotalPrice()">
+              </div>
+              <div class="plus fl" v-on:click="changeNum(pro,1)">+</div>
+            </div>
+            <div class="shoppro_price fr">
+              <div class="Carnum1">{{pro.productprice0 | formatMoney}}</div>
+              <div class="Carnum2">{{pro.productprice | formatMoney}}</div>
+              <div class="cx">卖家促销</div>
+            </div>
+          </li>
+        </ul>
+      </li>
+     </ul>
+   </div>
+   <div class=" comWidth">
+      <div class="shoppingcar_accright fr"> <span>已选商品<i class="Carnum3">{{totalNum}}</i>件</span> <span>合计（不含运费）：<i class="Carnum4">{{totalMoney | sumMoney}}</i></span>
+        <button v-on:click="alert('你的订单不能支付！')"><a style="font:16px '微软雅黑'">结算</a></button>
+      </div>
+   </div>
 
 
   <!----帮助区-------------------------------------------->
@@ -155,14 +230,14 @@
       <p><img src="images/logo1.jpg"/><img src="images/logo2.jpg"/></p>
     </div>
   </div>
-  <!----------对话框--------------------------------->
+  <!----------对话框-------------------------------->
     <div class="cover" id="cover" v-bind:class="{'dialog-show':delFlag}"></div>
     <div class="dialog" id="dialog" v-bind:class="{'dialog-show':delFlag}" >
         <span v-on:click="delFlag=false"></span>
-        <h1>确定删除此商品吗？</h1>
+        <h1>确定删除此地址吗？</h1>
         <div class="dialogbtn">
         <input type="button" value="取消" id="cancel" v-on:click="delFlag=false">
-        <input type="button" value="确定" id="sure" v-on:click="surePro()">
+        <input type="button" value="确定" id="sure" v-on:click="sureAdd()">
         </div>
     </div>  
     <!----------对话框--------------------------------->  
