@@ -1,10 +1,10 @@
 var tips=["label-default","label-primary","label-success","label-info","label-warning","label-danger"];
 /*判断设备
+var click='click';
 if(/ipad|iphone|android/.test(UA)){
-   window.CLICK='tap';
-   window.MobileDevice=true;
+  click='tap';
 }else{
-   window.CLICK='click';
+  click='click';
 }*/
 $(document).ready(function(){
 	//点击搜索显示搜索框
