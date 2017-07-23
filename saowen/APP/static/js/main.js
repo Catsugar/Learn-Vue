@@ -1,11 +1,4 @@
 var tips=["label-default","label-primary","label-success","label-info","label-warning","label-danger"];
-/*判断设备
-var click='click';
-if(/ipad|iphone|android/.test(UA)){
-  click='tap';
-}else{
-  click='click';
-}*/
 $(document).ready(function(){
 	//点击搜索显示搜索框
 	$('#searchbtn').click(function(){
@@ -14,20 +7,6 @@ $(document).ready(function(){
 	$('#backbtn').click(function(){
 		$('#search').fadeOut("fast");
 	})
-	//qie
-	$('.footer ul:eq(1)').click(function(){
-		$('.header').fadeIn("fast");
-	})
-	$('.footer ul:eq(2)').click(function(){
-		$('.header').fadeIn("fast");
-	})
-	$('.footer ul:eq(4)').click(function(){
-		$('.header').fadeOut("fast");
-	})
-	$('.footer ul:eq(5)').click(function(){
-		$('.header').fadeOut("fast");
-	})
-	
 	//给标签添加颜色
 	var j=0;
 	var k=0;
@@ -42,11 +21,6 @@ $(document).ready(function(){
 		$(this).toggleClass("icon-star");
 		$(this).toggleClass("icon-wujiaoxing");
 	})
-    $('.favor').click(function(){
-		$(this).toggleClass("icon-aixin1");
-		$(this).toggleClass("icon-aixin");
-	})
-
 	//输入框拉长
 	$('textarea').focus(function(){
 	    $(this).animate({
