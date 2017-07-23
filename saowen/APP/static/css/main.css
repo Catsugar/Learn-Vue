@@ -9,8 +9,8 @@ body,div,li,a,h1,h2,h3,h4,h5,ul,span {
 body{background-color:rgb(239,238,235);}
 li{list-style:none;}
 i{font-style:normal;}
-.title,.author{font-size:14px;color:#F30;font-weight:bold;opacity:1;}
-.title:link,.author:link,.title:hover,.author:hover{opacity:0.6;color:#F30;font-weight:bold;}
+.title,.author{font-size:14px;font-weight:bold;opacity:1;}
+.title:link,.author:link,.title:hover,.author:hover{opacity:0.6;color:#F00;font-weight:bold;}
 a:link,a:hover,a:active,a:visited{text-decoration:none;}
 .footer a:link,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
 .favor{font-size:18px;}
@@ -132,7 +132,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	border-bottom:1px solid #999;
 	border-top:1px solid #999;
 	/*box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.5);*/}
-.state{color:#999;font-size:13px;}
+.status{color:#999;font-size:14px;}
 .home hr{
 	border:1px dashed #999;
 	padding:0;
@@ -293,6 +293,9 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	font-size:14px;
 	color:#666;
 	position:relative;}
+.novel-box h1{
+	font-size:2.5rem;
+	font-weight:bold;}
 .novel-box,.commentbox,.collection-box li{
 	margin-top:10px;background-color:#fff;line-height:24px;}
 .authorlist-box li{line-height:24px;background-color:#fff;}
@@ -307,7 +310,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .love-box input{
 	width:200px;
 	font-size:13px;
-	height:24px;
+	height:30px;
 	line-height:30px;
 	margin-top:5px;}
 .commentbtn{margin-right:1rem;}

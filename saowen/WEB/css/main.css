@@ -256,9 +256,10 @@ hr{padding:0;margin:10px 0;}
 .love-box input{
 	width:200px;
 	font-size:13px;
-	height:24px;
+	height:30px;
 	line-height:30px;
 	margin-top:5px;}
+.love-box input,button{vertical-align:baseline}
 /********实现切换效果**********/
 .state{
 	display:none;}
