@@ -6,6 +6,18 @@
    * [购物车页面](https://catsugar.github.io/Learn-Vue/myVueAPP-3/shopcar.html)
    * [地址页面](https://catsugar.github.io/Learn-Vue/myVueAPP-3/address.html)
 （模板用的之前仿的天猫购物车静态页面，当时我为什么写的这么。。。[○･｀Д´･ ○]）
+
+***
+   * [测试1](https://catsugar.github.io/saowen-静态/扫文APP/cover.html)
+   * [测试1](https://catsugar.github.io/saowen-静态/扫文APP/author.html)
+   * [测试1](https://catsugar.github.io/saowen-静态/扫文APP/novel.html)
+   * [测试1](https://catsugar.github.io/saowen-静态/扫文APP/search.html)
+   * [测试1](https://catsugar.github.io/saowen-静态/扫文APP/login.html)
+   * [测试2](https://catsugar.github.io/saowen-静态/扫文WEB/index.html)
+   * [测试2](https://catsugar.github.io/saowen-静态/扫文WEB/author.html)
+   * [测试2](https://catsugar.github.io/saowen-静态/扫文WEB/novel.html)
+   * [测试2](https://catsugar.github.io/saowen-静态/扫文WEB/search.html)
+   * [测试2](https://catsugar.github.io/saowen-静态/扫文WEB/back.html)
 ***
 ## 记录一下Vue安装搭建过程。
 

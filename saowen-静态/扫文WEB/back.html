@@ -1,0 +1,177 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 包含头部信息用于适应不同设备 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+<link rel="shortcut icon" href="images/favicon0.ico">
+<title>看什喵？！</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+<!--------返回按钮----------->
+<div id="backbtn" style="display:none">Top</div>
+<!--------导航------------------------------------------------------------------------>
+<header id="header" >
+  <div class="navbox comWidth">
+    <div class="nav-left"> <a class="navbar-brand" href="#"  >看什喵？！</a> </div>
+    <ul class="nav-middle">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="collect-list.html">书单</a></li>
+      <li><a href="author-list.html">作者</a></li>
+      <li><a href="">手机端</a></li>
+    </ul>
+    <div class="nav-right">
+      <input type="text" placeholder="搜索作者、作品或者标签" >
+      <i class="iconfont icon-sousuo"></i>
+      <ul>
+        <li class="btnbox">
+         <a href="" type="button" class="btn btn-sm btn-danger login" data-toggle="modal" data-target="#myLogin">登录</a> 
+         <a href="" type="button" class="btn btn-sm btn-info register" data-toggle="modal" data-target="#myRegister">注册</a> </li>
+        <li class="user-head"> <a href=""> <img src="images/1.png" class="img-circle" width="36px"></a> <a href="">猫岁君</a> </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!--------主体------------------------------------------------------------------------>
+<section class="back">
+  <img src="images/0.jpg" class="img-circle  center-block" width="100px">
+  <h3><b>猫岁君</b></h3>
+  <div>
+    <ul id="myTab" class="nav nav-tabs">
+      <li class="active"><a href="#my-saowen" data-toggle="tab">我的扫文</a></li>
+      <li><a href="#my-collect" data-toggle="tab">我的扫文单</a></li>
+      <li><a href="#my-author" data-toggle="tab">收藏的作者</a></li>
+      <li class="dropdown">
+        <a href="#" id="create" class="dropdown-toggle" data-toggle="dropdown">创建&nbsp;<b class="caret"></b></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+            <li><a href="#create-novel" data-toggle="modal" data-target="#myNovel">创建文词条</a></li>
+            <li><a href="#create-collect" data-toggle="modal" data-target="#myClollect">创建扫文单</a></li>
+        </ul>
+      </li>
+      <li><a>退出</a></li>
+    </ul>
+ </div>
+ <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="my-saowen">
+      <ul>
+       <!--------item-------->
+        <li>
+            看过<a href="" class="title">《默读》</a>&nbsp;&nbsp;&nbsp;&nbsp;作者：<a href="" class="author">priest</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：<span>90.00</span><br><br>
+            <a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a>
+            <div class="comment">
+              <p>诶，好文笔是什么，就贴一段这文里我特别喜欢的描写，注意不是主cp而是主cp刚开始都在追求的一个直男。
+              <button type="button" class="btn btn-sm btn-danger more-btn pull-right">more</button></p>
+            </div>
+        </li>
+       <!--------item-------->
+        <li>
+            看过<a href="" class="title">《默读》</a>&nbsp;&nbsp;&nbsp;&nbsp;作者：<a href="" class="author">priest</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：<span>90.00</span><br><br>
+            
+            <a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a>
+            <div class="comment">
+              <p>诶，好文笔是什么，就贴一段这文里我特别喜欢的描写，注意不是主cp而是主cp刚开始都在追求的一个直男。
+              <button type="button" class="btn btn-sm btn-danger more-btn pull-right">more</button></p>
+            </div>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="my-collect">
+       <h3><b>我创建的扫文单</b></h3>
+       <ul >
+        <li><a href="" class="title">文笔盖过all</a>&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;<i>猫岁</i><span class="pull-right">共<i>10</i>篇&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏</span></li>
+        <li><a href="" class="title">文笔盖过all</a>&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;<i>猫岁</i><span class="pull-right">共<i>10</i>篇&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏</span></li>
+        <li><a href="" class="title">文笔盖过all</a>&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;<i>猫岁</i><span class="pull-right">共<i>10</i>篇&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏</span></li>
+        <li><a href="" class="title">文笔盖过all</a>&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;<i>猫岁</i><span class="pull-right">共<i>10</i>篇&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏</span></li>
+       </ul>
+       <h3><b>我收藏的扫文单</b></h3>
+       <ul>
+        <li><a href="" class="title">文笔盖过all</a>&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;<i>猫岁</i><span class="pull-right">共<i>10</i>篇&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏</span></li>
+        <li><a href="" class="title">文笔盖过all</a>&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;<i>猫岁</i><span class="pull-right">共<i>10</i>篇&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏</span></li>
+        <li><a href="" class="title">文笔盖过all</a>&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;<i>猫岁</i><span class="pull-right">共<i>10</i>篇&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏</span></li>
+        <li><a href="" class="title">文笔盖过all</a>&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;<i>猫岁</i><span class="pull-right">共<i>10</i>篇&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏</span></li>
+       </ul>
+    </div>
+    <div class="tab-pane fade" id="my-author">
+       <ul>
+        <li><a href="" class="author">非天夜翔</a><span class="pull-right">共<i>10</i>人收藏</span></li>
+        <li><a href="" class="author">非天夜翔</a><span class="pull-right">共<i>10</i>人收藏</span></li>
+        <li><a href="" class="author">非天夜翔</a><span class="pull-right">共<i>10</i>人收藏</span></li>
+        <li><a href="" class="author">非天夜翔</a><span class="pull-right">共<i>10</i>人收藏</span></li>
+       </ul>
+    </div>
+ </div>
+ </section>
+
+<!------------------------------页脚-------------------------------------------------->
+<footer class="foot">
+  <div class="bd"> 
+     <a href="https://catsugar.github.io/"><i class="iconfont icon-wenzhang"></i></a>  
+     <a href="http://weibo.com/3058509247/profile?topnav=1&wvr=6&is_all=1"><i class="iconfont icon-weibo"></i></a>
+     <a href=""><i class="iconfont icon-weixin1"></i></a> 
+     <a href="https://github.com/Catsugar"><i class="iconfont icon-github1"></i></a> 
+  </div>
+  <p class="ft">所有素材均来自互联网，仅用于学习和交流。made by Catsugar. </p>
+</footer>
+<!----------对话框--------------------------------> 
+<div class="modal fade" id="myNovel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3 class="modal-title"><b>创建文词条</b></h3>
+	   </div>
+	   <div class="modal-body">
+         <table>
+          <tr>
+            <td>标题：</td><td><input type="text"></td>
+            <td>作者：</td><td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>类型：</td><td><select><option value="原创" selected>原创</option><option value="同人" >同人</option></select></td>
+            <td>进度：</td><td><select><option value="已完成" selected>已完成</option><option value="连载中" >连载中</option></select></td>
+          </tr>
+          <tr>
+            <td>篇幅：</td><td><select><option value="中长篇" selected>中长篇</option><option value="短篇" >短篇</option></select></td></td>
+            <td>时间：</td><td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>口味：</td><td><select><option value="清水" selected>清水</option><option value="普通" >普通</option></select></td>
+            <td>人物：</td><td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>首发：</td><td><input type="text"></td><td></td><td></td>
+          </tr>
+         </table>
+         <div class="modal-btn"><button type="button" class="btn btn-default" >确定</button>
+		 <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+         </div>
+	   </div>
+     </div>
+  </div>
+</div>
+<!----------对话框--------------------------------> 
+<div class="modal fade" id="myClollect" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3 class="modal-title"><b>创建扫文单</b></h3>
+	   </div>
+	   <div class="modal-body">
+		 <input type="text"  placeholder="输入名称" >
+         <input type="text"  placeholder="一句话描述文単" >
+		 <div class="modal-btn"><button type="button" class="btn btn-default" >确定</button>
+		 <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+         </div>
+	   </div>
+     </div>
+  </div>
+</div>
+</body>
+</html>
