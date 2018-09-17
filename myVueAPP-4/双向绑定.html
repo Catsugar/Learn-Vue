@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>实例</title>
+<link type="text/css" href="CSS/main.css" rel="stylesheet"/>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.min.js"></script>
+</head>
+<body>
+	<div id="app" style="background-color:#FFF"> 
+	  <div v-bind:text="title"></div>
+	  <input v-model="content"/>
+	  <div>{{content}}</div>
+
+	</div>
+	<script type="text/javascript">
+		new Vue(
+		{
+			el:"#app",
+			data:{
+				title:"不，我是朱一龙",
+				content:"朱砂痣"
+			}
+		})
+	</script>
+</body>
+</html>
