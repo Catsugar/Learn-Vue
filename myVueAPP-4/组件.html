@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>实例</title>
+<link type="text/css" href="CSS/main.css" rel="stylesheet"/>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.min.js"></script>
+</head>
+<body>
+	<div id="app" style="background-color:#FFF"> 
+	  <input v-model="inputValue"/>
+	  <button @click="addValue">提交</button>
+	  <ul>
+         <todo-item v-for="(item, index) of list" :key='index' :content='item'></todo-item>
+         <todo></todo>
+	  </ul>
+	</div>
+	<script type="text/javascript">
+	    Vue.component('todo-item',{
+	    	props: ['content'],
+	    	template:'<li @click="handleClick">{{content}}</li>',
+	    	methods: {
+				handleClick: function () {
+                  alert('你是大笨蛋吗');
+				},
+			}
+	    })
+	    var todo={
+	      template:'<li>3333333333333</li>'
+	    }
+		new Vue({
+			el:"#app",
+			components:{
+				'todo': todo
+			},
+			data:{
+				list:['朱一龙','白宇','沈巍','赵云澜'],
+				inputValue:'',
+				show:true,
+			},
+			computed:{
+			},
+			methods: {
+				addValue: function () {
+                  this.list.push(this.inputValue);
+                  this.inputValue='';
+				},
+			},
+			watch:{
+			}
+		})
+	</script>
+</body>
+</html>
